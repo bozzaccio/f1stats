@@ -1,14 +1,13 @@
-# F1stats
+# F1 Stats
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
 
+This app for take data use RESTful API offered by [Ergast Developer API](https://ergast.com/mrd/)
+
 ## Development server
 
+Before to start run `npm install` for download dependencies 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -22,6 +21,11 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## App Libraries
+[NgRx](https://ngrx.io/). Redux state managment system based on angular
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[RxJs](https://rxjs-dev.firebaseapp.com/guide/overview). ReactiveX for asyncronus programming on javascript
+
+[Angular Material](https://material.angular.io/). Material UI component 
+
+[Nebular](https://akveo.github.io/nebular/). UI main theme
