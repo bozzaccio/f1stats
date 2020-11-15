@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
 
   public sliderWPImages: string[] = [
     'assets/icons/jpg/wall1.jpg',
@@ -15,9 +16,10 @@ export class DashboardComponent implements OnInit {
     'assets/icons/jpg/wall5.jpg',
   ];
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
-  ngOnInit(): void {
+  public navigateTo(routeName: string){
+    this._router.navigate([routeName]);
   }
 
 }

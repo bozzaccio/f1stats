@@ -1,0 +1,13 @@
+.schedule-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.schedule-card-container {
+  height: 70%;
+  width: 70%;
+  z-index: 1;
+}

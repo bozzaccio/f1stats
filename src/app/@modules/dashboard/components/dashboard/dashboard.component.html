@@ -1,9 +1,9 @@
 <div class="navbar-container">
   <ul class="navbar">
-    <li>
+    <li (click)="navigateTo('/dashboard')">
       <img src="assets/icons/svg/racing-car.svg">
     </li>
-    <li>
+    <li (click)="navigateTo('/dashboard/schedule')">
       <span>Race Schedule</span>
     </li>
     <li>
@@ -20,7 +20,8 @@
     </li>
   </ul>
 </div>
+<router-outlet></router-outlet>
 <app-image-slider
   [imgList]="sliderWPImages"
-  [msTimeSlide]="7000"
+  [msTimeSlide]="10000"
 ></app-image-slider>
