@@ -27,5 +27,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 [RxJs](https://rxjs-dev.firebaseapp.com/guide/overview). ReactiveX for asyncronus programming on javascript
 
 [Angular Material](https://material.angular.io/). Material UI component 
-
-[Nebular](https://akveo.github.io/nebular/). UI main theme
