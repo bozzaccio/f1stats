@@ -1,4 +1,4 @@
-export interface ApiConfigParameters {
+export interface IApiConfigParameters {
   category?: categoryEnum;
   year?: number | 'current';
   raceNumber?: number;

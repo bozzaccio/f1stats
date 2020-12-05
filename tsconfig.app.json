@@ -11,5 +11,8 @@
   ],
   "include": [
     "src/**/*.d.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "enableIvy": false // disable for material 11.0.0 because all module cannot support ivy.
+  }
 }
