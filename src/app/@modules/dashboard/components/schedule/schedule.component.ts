@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ScheduleService} from "../../services/schedule.service";
 import {IApiConfigParameters} from "../../../../@core/interfaces/api-config-parameters";
 import {IRace} from "../../../../@shared/interfaces/race.interface";
-import {IRaceTable} from "../../../../@shared/interfaces/race-schedule.interface";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-schedule',
@@ -11,13 +12,16 @@ import {IRaceTable} from "../../../../@shared/interfaces/race-schedule.interface
 })
 export class ScheduleComponent implements OnInit {
 
-  public raceTable: IRaceTable;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  public displayedColumns: string[] = ['raceName', 'circuit', 'locality', 'date'];
+  public dataSource = new MatTableDataSource<IRace>();
 
   constructor(private _scheduleService: ScheduleService) {
   }
 
   ngOnInit(): void {
-    // this.callServer();
+    this.callServer();
   }
 
   public callServer() {
@@ -25,7 +29,8 @@ export class ScheduleComponent implements OnInit {
       year: "current"
     }
     this._scheduleService.execute(payload).subscribe(data => {
-      this.raceTable = this._scheduleService.mapResponse(data);
+      this.dataSource = new MatTableDataSource<IRace>(this._scheduleService.mapResponse(data).races);
+      this.dataSource.paginator = this.paginator;
     });
   }
 

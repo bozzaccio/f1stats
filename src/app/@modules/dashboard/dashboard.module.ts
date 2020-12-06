@@ -6,6 +6,11 @@ import {ScheduleComponent} from './components/schedule/schedule.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from "@angular/material/button";
 import {CommonModule} from "@angular/common";
+import {CdkTableModule} from '@angular/cdk/table';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
 
 @NgModule({
   declarations: [DashboardComponent, ScheduleComponent],
@@ -14,7 +19,10 @@ import {CommonModule} from "@angular/common";
     SharedModule,
     MatCardModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,
+    CdkTableModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class DashboardModule {

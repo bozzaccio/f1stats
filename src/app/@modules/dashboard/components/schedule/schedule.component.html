@@ -4,11 +4,35 @@
       <mat-card-title>Race Schedule</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <button mat-raised-button color="primary" (click)="callServer()">Primary</button>
-      <span>{{raceTable.season}}</span>
-      <div *ngFor="let race of raceTable.races">
-        <span>{{race.raceName}}</span>
+      <div class="table-container">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="raceName">
+            <th mat-header-cell *matHeaderCellDef> Race Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.raceName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="circuit">
+            <th mat-header-cell *matHeaderCellDef> Circuit</th>
+            <td mat-cell *matCellDef="let element"> {{element.circuit.circuitName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="locality">
+            <th mat-header-cell *matHeaderCellDef> Locality</th>
+            <td mat-cell *matCellDef="let element"> {{element.circuit.location.locality}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Date</th>
+            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
       </div>
+      <mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons></mat-paginator>
     </mat-card-content>
   </mat-card>
 </div>
