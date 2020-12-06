@@ -1,4 +1,3 @@
-export interface IAppState<T>{
-  payload: T;
+export interface IAppState{
   isLoading: boolean;
 }

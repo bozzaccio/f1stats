@@ -9,7 +9,13 @@ import {CommonModule} from "@angular/common";
 import {CdkTableModule} from '@angular/cdk/table';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
+import {StoreModule} from "@ngrx/store";
+import {EffectsModule} from "@ngrx/effects";
+import {DashboardEffects} from "./store/effects/dashboard.effects";
+import {dashboardReducer} from "./store/reducers/dashboard.reducer";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {environment} from "../../../environments/environment";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 @NgModule({
@@ -22,7 +28,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CommonModule,
     CdkTableModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    StoreModule.forRoot(dashboardReducer),
+    EffectsModule.forRoot([DashboardEffects]),
+    StoreDevtoolsModule.instrument({logOnly: environment.production}),
   ]
 })
 export class DashboardModule {

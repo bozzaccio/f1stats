@@ -1,9 +1,9 @@
 import {createAction, props} from '@ngrx/store';
-import {IAppState} from '../../../../@core/interfaces/state.interface';
+import {IBaseResponse} from "../../../../@core/interfaces/base-service.interface";
+import {IApiConfigParameters} from "../../../../@core/interfaces/api-config-parameters";
 
 export const loadRaceSchedule = createAction('[LOAD RACE SCHEDULE] START',
-  props<IAppState>());
+  props<IApiConfigParameters>());
 export const loadRaceScheduleSuccess = createAction('[LOAD RACE SCHEDULE] SUCCESS load race data',
-  props<IAppState>());
-export const loadRaceScheduleFailed = createAction('[LOAD RACE SCHEDULE] FAILED load race server error',
-  props<IAppState>());
+  props<IBaseResponse>());
+export const loadRaceScheduleFailed = createAction('[LOAD RACE SCHEDULE] FAILED load race server error');
