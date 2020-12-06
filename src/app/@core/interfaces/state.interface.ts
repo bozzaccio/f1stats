@@ -1,8 +1,4 @@
-
-export interface IAppState{
-  data: [];
+export interface IAppState<T>{
+  payload: T;
   isLoading: boolean;
-  limit?: string;
-  offset?: string;
-  total?: string;
 }

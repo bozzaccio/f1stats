@@ -36,12 +36,6 @@ export class ApiBuilderService {
 
   public getData(requestUrl: string): Observable<any> {
 
-    let options: any = {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    };
-
-    return this._http.get(requestUrl, options);
+    return this._http.get(requestUrl);
   }
 }

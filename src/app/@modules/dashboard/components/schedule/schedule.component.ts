@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ScheduleService} from "../../services/schedule.service";
 import {IApiConfigParameters} from "../../../../@core/interfaces/api-config-parameters";
+import {IRace} from "../../../../@shared/interfaces/race.interface";
+import {IRaceTable} from "../../../../@shared/interfaces/race-schedule.interface";
 
 @Component({
   selector: 'app-schedule',
@@ -9,10 +11,13 @@ import {IApiConfigParameters} from "../../../../@core/interfaces/api-config-para
 })
 export class ScheduleComponent implements OnInit {
 
+  public raceTable: IRaceTable;
+
   constructor(private _scheduleService: ScheduleService) {
   }
 
   ngOnInit(): void {
+    // this.callServer();
   }
 
   public callServer() {
@@ -20,7 +25,7 @@ export class ScheduleComponent implements OnInit {
       year: "current"
     }
     this._scheduleService.execute(payload).subscribe(data => {
-      console.log(data);
+      this.raceTable = this._scheduleService.mapResponse(data);
     });
   }
 

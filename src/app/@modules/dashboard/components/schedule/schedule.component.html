@@ -5,6 +5,10 @@
     </mat-card-header>
     <mat-card-content>
       <button mat-raised-button color="primary" (click)="callServer()">Primary</button>
+      <span>{{raceTable.season}}</span>
+      <div *ngFor="let race of raceTable.races">
+        <span>{{race.raceName}}</span>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

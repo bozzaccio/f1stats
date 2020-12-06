@@ -7,11 +7,7 @@ const DashboardRoutes: Route[] = [{
   path: '',
   component: DashboardComponent,
   children: [
-    {path: 'schedule', component: ScheduleComponent},
-    // {path: 'qualifying', component: null},
-    // {path: 'drivers', component: null},
-    // {path: 'constructors', component: null},
-    // {path: 'circuit', component: null},
+    {path: 'schedule', component: ScheduleComponent}
   ]
 }];
 
