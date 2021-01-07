@@ -2,6 +2,7 @@ export interface IApiConfigParameters {
   category?: categoryEnum;
   year?: number | 'current';
   raceNumber?: number;
+  showResult?: boolean;
 }
 
 export enum categoryEnum {

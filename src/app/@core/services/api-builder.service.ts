@@ -29,6 +29,10 @@ export class ApiBuilderService {
       requestUrl = requestUrl.concat('/', params.category);
     }
 
+    if(params.showResult){
+      requestUrl = requestUrl.concat('/results');
+    }
+
     requestUrl = requestUrl.concat('.json');
 
     return requestUrl;

@@ -6,4 +6,10 @@ export const loadRaceSchedule = createAction('[LOAD RACE SCHEDULE] START',
   props<IApiConfigParameters>());
 export const loadRaceScheduleSuccess = createAction('[LOAD RACE SCHEDULE] SUCCESS load race data',
   props<IBaseResponse>());
-export const loadRaceScheduleFailed = createAction('[LOAD RACE SCHEDULE] FAILED load race server error');
+
+export const loadRaceDetails = createAction('[LOAD RACE DETAILS] START',
+  props<IApiConfigParameters>());
+export const loadRaceDetailsSuccess = createAction('[LOAD RACE DETAILS] SUCCESS load race details',
+  props<IBaseResponse>());
+
+export const loadFailed = createAction('[LOAD RACE SCHEDULE] FAILED load race server error');

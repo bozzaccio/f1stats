@@ -16,10 +16,12 @@ import {dashboardReducer} from "./store/reducers/dashboard.reducer";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {environment} from "../../../environments/environment";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatIconModule} from '@angular/material/icon';
+import { RaceDetailComponent } from './components/race-detail/race-detail.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, ScheduleComponent],
+  declarations: [DashboardComponent, ScheduleComponent, RaceDetailComponent],
   imports: [
     DashboardRoutingModule,
     SharedModule,
@@ -30,6 +32,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatTableModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
+    MatIconModule,
     StoreModule.forRoot(dashboardReducer),
     EffectsModule.forRoot([DashboardEffects]),
     StoreDevtoolsModule.instrument({logOnly: environment.production}),

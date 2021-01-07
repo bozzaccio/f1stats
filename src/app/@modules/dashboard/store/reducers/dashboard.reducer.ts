@@ -4,7 +4,7 @@ import * as dashboardAction from '../actions/dashboard.actions';
 
 
 const initialState: IAppState = {
-  isLoading: false,
+  isLoading: false
 };
 
 const reducer = createReducer(initialState,
@@ -18,7 +18,17 @@ const reducer = createReducer(initialState,
       isLoading: false
     })
   ),
-  on(dashboardAction.loadRaceScheduleFailed, (state: IAppState) => ({
+  on(dashboardAction.loadRaceDetails, (state: IAppState) => ({
+      ...state,
+      isLoading: true
+    })
+  ),
+  on(dashboardAction.loadRaceDetailsSuccess, (state: IAppState) => ({
+      ...state,
+      isLoading: false,
+    })
+  ),
+  on(dashboardAction.loadFailed, (state: IAppState) => ({
       ...state,
       isLoading: false
     })

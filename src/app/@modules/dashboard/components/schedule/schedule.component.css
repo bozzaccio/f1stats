@@ -21,3 +21,15 @@
 table {
   width: 100%;
 }
+
+/* BUTTON ICON CLASS */
+
+.button-icon{
+  cursor: pointer;
+}
+
+.button-icon:hover{
+  cursor: pointer;
+  color: rgba(255, 0, 0, 0.5);
+  font-size: 30px;
+}
