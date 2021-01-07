@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This app for take data use RESTful API offered by [Ergast Developer API](https://ergast.com/mrd/)
 
+the app has been deployed in the following url: https://bozzaccio.github.io/f1stats/
+
 ## Development
 
 the application was created to test ngrx and try some js usage like image slider and so on.
